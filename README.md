@@ -2,11 +2,15 @@
 
 [toc]
 
+作者: 阿凯爱玩机器人 | QQ:  244561792 | 微信: xingshunkai
 
+[1Z实验室](http://1zlab.com/) | [B站](https://space.bilibili.com/40344504) | [知乎](https://www.zhihu.com/people/mushroom-x)
 
 ## 概要
 
-本文介绍了如何使用Python读取游戏手柄的事件。 
+本文介绍了如何使用Python读取游戏手柄的事件。 基于`input`库实现。
+
+
 
 ## 软硬件版本
 
