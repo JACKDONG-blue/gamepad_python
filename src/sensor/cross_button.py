@@ -1,7 +1,6 @@
 '''
 十字按键
 '''
-from asyncio.log import logger
 import enum
 from logging import Logger
 from inputs import InputEvent
@@ -77,11 +76,11 @@ class CrossButtonSingle(Button):
 		'''复制传感器数值'''
 		if new_value == self.button_click_value.value:
 			# 设置标志位
-			self.logger.info(f"按键按下, new_value={new_value}")
+			self.logger.info(f"按键按下")
 			self._event_flag = ButtonEventFlag.BUTTON_CLICK
 		elif new_value == CrossButtonSingleValue.BUTTON_RELEASE.value:
 			# 设置标志位
-			self.logger.info(f"按键释放, new_value={new_value}")
+			self.logger.info(f"按键释放")
 			self._event_flag = ButtonEventFlag.BUTTON_RELEASE
 		# 复制
 		self._value = new_value
@@ -135,7 +134,6 @@ class CrossButton(LoggerInterface):
 		x, y = self.get_position()
 		# 判断跟之前的数值是否一样
 		if self.last_x == x and self.last_y == y:
-			self.logger.info(f"数值没有变: ({self.last_x} , {self.last_y}")
 			return
 		# 十字按键释放
 		if x == 0 and y == 0 and self.on_release is not None:
@@ -147,4 +145,3 @@ class CrossButton(LoggerInterface):
 		# 更新数据
 		self.last_x = x
 		self.last_y = y
-		

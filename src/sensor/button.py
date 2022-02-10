@@ -64,9 +64,10 @@ class Button(Sensor):
 		if new_value == ButtonValue.BUTTON_CLICK.value:
 			# 设置标志位
 			self._event_flag = ButtonEventFlag.BUTTON_CLICK
+			self.logger.info("按键按下")
 		elif new_value == ButtonValue.BUTTON_RELEASE.value:
 			# 设置标志位
 			self._event_flag = ButtonEventFlag.BUTTON_RELEASE
+			self.logger.info("按键释放")
 		# 复制
 		self._value = new_value
-		logger.info("value = {self._value}")

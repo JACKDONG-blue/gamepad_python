@@ -54,15 +54,15 @@ class GamePad(LoggerInterface):
 				# self.logger.info("事件捕获")
 				# self.logger.info(f"设备名: {event.device} 触发时间: {event.timestamp}")
 				# 数据类型 |字符串|字符串|整数|
-				self.logger.info(f"事件类型: {event.ev_type} | 事件代码: {event.code} | 事件状态: {event.state}")  # 字符串
+				# self.logger.info(f"事件类型: {event.ev_type} | 事件代码: {event.code} | 事件状态: {event.state}")  # 字符串
 				# 判断事件是否在映射地图里
 				if event.code not in self.event_sensor_map:
-					self.logger.info(f"未知事件代码: {event.code}")
+					# self.logger.info(f"未知事件代码: {event.code}")
 					continue
 				# 获取该传感器
 				sensor_list = self.event_sensor_map[event.code]
 				# 执行回调函数
 				for sensor in sensor_list:
-					self.logger.info(f"响应传感器: {sensor.name}")
+					# self.logger.info(f"响应传感器: {sensor.name}")
 					sensor.event_handler(event)
 	

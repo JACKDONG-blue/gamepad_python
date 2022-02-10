@@ -12,7 +12,9 @@ class LoggerInterface(object):
             name = self.__class__.__name__
         self.logger = getLogger(name)
         # 设置日志等级
+        self.logging_level = logging_level
         if logging_level is None:
             self.logger.setLevel(logging.INFO)
         else:
             self.logger.setLevel(logging_level)        
+        

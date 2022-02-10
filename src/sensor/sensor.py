@@ -67,6 +67,7 @@ class Sensor(LoggerInterface):
         if new_value != self._value:
             # 设置标志位
             self._event_flag = SensorEventFlag.VALUE_CHANGE
+            self.logger.info(f"数值更新: {new_value}")
         self._value = new_value
     
     
