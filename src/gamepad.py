@@ -20,7 +20,7 @@ class EventListenerThread(Thread):
 		
 	def run(self):
 		while True:
-			print("...")
+			# print("...")
 			try:
 				if self.stop_event.is_set():
 					print("退出")
@@ -73,6 +73,7 @@ class GamePad(LoggerInterface):
 		'''事件监听'''
 		# 遍历事件(这个函数是阻塞的)
 		# 如果没有事件发生，则会一直卡在这里
+		# PROBLEM: inputs里面的device.read函数没有超时机制
 		events =  get_gamepad()
 		for event in events:
 			# self.logger.info("事件捕获")
