@@ -1,5 +1,6 @@
 '''传感器'''
 
+from asyncio.log import logger
 import enum
 from copy import deepcopy
 from inputs import InputEvent
@@ -23,7 +24,7 @@ class Sensor(LoggerInterface):
         self.event_type = event_type
         self.event_code = event_code
         # 传感器数值记录
-        self._value = None
+        self._value = 0
         # 标志位
         self._event_flag = SensorEventFlag.NONE
         # 判断回调函数是否有效， 配置回调函数
@@ -33,15 +34,13 @@ class Sensor(LoggerInterface):
         else:
             self.on_change = None
         
-    def event_filter(self, event: InputEvent) -> Exception:
+    def event_filter(self, event: InputEvent):
         '''事件过滤器
         判断当前事件，是否跟传感器有关系
         '''
-        if event.ev_type != self.event_type:
-            return False
-        if event.code != self.event_code:
-            return False
-        return True
+        if event.ev_type == self.event_type and event.code == self.event_code:
+            return True
+        return False
     
     def event_handler(self, event):
         '''事件处理器'''
