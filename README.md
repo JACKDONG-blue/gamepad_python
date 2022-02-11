@@ -12,7 +12,9 @@
 
 ## 概要
 
-在`inputs`库的基础上封装了一个游戏手柄库`GamePad-Python`， 主要功能如下:
+一个游戏手柄库`GamePad-Python`，基于`inputs`。
+
+主要功能如下:
 
 * 创建了三种传感器类， 包括普通按键、十字按键、遥杆。
 * 根据自己的手柄布局， 自由配置组合自己的游戏手柄类。
@@ -21,10 +23,9 @@
 
 ## 使用手册
 
-* [inputs库使用教程](./image/inputs库使用教程/inputs库使用教程.md)
-* [游戏手柄按键事件(谷粒金刚2Pro)](./doc/游戏手柄按键事件(谷粒金刚2Pro)/游戏手柄按键事件(谷粒金刚2Pro).md)
-
-*  [GamePad库Python使用示例](doc/GamePad库Python使用示例/GamePad库Python使用示例.md)
+1. [inputs库使用教程](doc/1.inputs库使用教程(Linux)/inputs库使用教程(Linux).md)
+2. [定制自己的游戏手柄类](doc/2.定制自己的游戏手柄类/定制自己的游戏手柄类.md)
+3. [GamePad库Python使用示例](doc/3.GamePad库Python使用示例/GamePad库Python使用示例.md)
 
 ## 快速入手
 

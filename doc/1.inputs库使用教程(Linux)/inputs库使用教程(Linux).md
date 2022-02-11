@@ -1,4 +1,4 @@
-# inputs库使用教程
+# inputs库使用教程(Linux)
 
 
 
